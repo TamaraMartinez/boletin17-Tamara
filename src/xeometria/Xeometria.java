@@ -12,7 +12,7 @@ public class Xeometria {
 		int perimetro;
 		perimetro = lado * 4;
 
-		if (lado < 0)
+		if (lado <= 0)
 			return -1;
 		else
 			return perimetro;
@@ -28,7 +28,7 @@ public class Xeometria {
 		int area;
 		area = lado * lado;
 
-		if (lado < 0)
+		if (lado <= 0)
 			return -1;
 		else
 			return area;
@@ -45,7 +45,7 @@ public class Xeometria {
 		double hipotenusa;
 		hipotenusa = Math.sqrt((catetoA * catetoA + catetoB * catetoB));
 
-		if (catetoA < 0 || catetoB < 0)
+		if (catetoA <= 0 || catetoB <= 0)
 			return -1;
 		else
 			return hipotenusa;
@@ -62,7 +62,7 @@ public class Xeometria {
 		double catetoB;
 		catetoB = Math.sqrt((hipotenusa * hipotenusa - catetoA * catetoA));
 		
-		if (hipotenusa < 0 || catetoA < 0)
+		if (hipotenusa <= 0 || catetoA <= 0)
 			return -1;
 		else
 			return catetoB;
