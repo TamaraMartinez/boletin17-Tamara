@@ -60,7 +60,7 @@ public class Xeometria {
 	
 	public double teoremaPitagoras(double hipotenusa, double catetoA){
 		double catetoB;
-		catetoB = Math.sqrt((hipotenusa * hipotenusa - catetoA * catetoA));
+		catetoB = Math.sqrt((catetoA * catetoA - hipotenusa * hipotenusa));
 		
 		if (hipotenusa <= 0 || catetoA <= 0)
 			return -1;
