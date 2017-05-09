@@ -27,14 +27,22 @@ public class DNITest {
 	}
 
 	@Test
-	public void calculaLetra() {
+	public void eValidoUn(){
+		DNI dni = new DNI();
+		assertEquals(true, dni.eValido("12345678Z"));
+		assertEquals(false, dni.eValido("12345678Y"));
+		assertEquals(false, dni.eValido("1234567"));
+	}
+	
+	@Test
+	public void calculaLetraUn() {
 		DNI dni = new DNI();
 		assertEquals(14, dni.calculaLetra("12345678"));
 	}
 	
 	@Test
 	
-	public void eValido() {
+	public void eValidoDous() {
 		DNI dni = new DNI();
 		dni.numeros.add(1);
 		dni.numeros.add(2);
