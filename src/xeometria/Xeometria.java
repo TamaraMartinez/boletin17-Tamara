@@ -1,5 +1,9 @@
 package xeometria;
-
+/**
+ * 
+ * @author dam115
+ * Se os métodos devolven o valor -1 significa que houbo un erro
+ */
 public class Xeometria {
 
 	/**
@@ -9,13 +13,15 @@ public class Xeometria {
 	 */
 	
 	public int perimetroCadrado(int lado) {
-		int perimetro;
-		perimetro = lado * 4;
-
+		//Compróbase que o lado sexa positivo
+		
 		if (lado <= 0)
 			return -1;
-		else
-			return perimetro;
+
+		//Defínese a variable perímetro e calcúlase o perímetro
+		int perimetro;
+		perimetro = lado * 4;
+		return perimetro;
 	}
 
 	/**
@@ -25,13 +31,15 @@ public class Xeometria {
 	 */
 
 	public int areaCadrado(int lado) {
-		int area;
-		area = lado * lado;
-
+		//Compróbase que o lado sexa positivo
+		
 		if (lado <= 0)
 			return -1;
-		else
-			return area;
+		
+		//Defínese a variable area e calcúlase a área
+		int area;
+		area = lado * lado;
+		return area;
 	}
 
 	/**
@@ -42,13 +50,16 @@ public class Xeometria {
 	 */
 
 	public double teoremaPitagoras(int catetoA, int catetoB) {
-		double hipotenusa;
-		hipotenusa = Math.sqrt((catetoA * catetoA + catetoB * catetoB));
-
+		//Compróbase que os catetos sexan positivos
+		
 		if (catetoA <= 0 || catetoB <= 0)
 			return -1;
-		else
-			return hipotenusa;
+		
+		//Definición da variable hipotenusa e cálculo da hipotenusa
+		
+		double hipotenusa;
+		hipotenusa = Math.sqrt((catetoA * catetoA + catetoB * catetoB));
+		return hipotenusa;
 	}
 	
 	/**
@@ -59,12 +70,17 @@ public class Xeometria {
 	 */
 	
 	public double teoremaPitagoras(double hipotenusa, double catetoA){
-		double catetoB;
-		catetoB = Math.sqrt((catetoA * catetoA - hipotenusa * hipotenusa));
+
+		// Compróbase que a hipotenusa sexa maior que o cateto
+		// Compróbase que a hipotenusa e o catetoA sexan positivos
 		
-		if (hipotenusa <= 0 || catetoA <= 0)
+		if (hipotenusa < catetoA||hipotenusa <= 0 || catetoA <= 0)
 			return -1;
-		else
-			return catetoB;
+		
+		// Definición da variable catetoB e cálculo do catetoB
+		
+		double catetoB;
+		catetoB = Math.sqrt((hipotenusa * hipotenusa - catetoA * catetoA));
+		return catetoB;
 	}
 }

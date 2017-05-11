@@ -57,12 +57,13 @@ public class XeometriaTest {
 	@Test
 	public void testTeoremaPitagorasDoubleDouble() {
 		Xeometria xeometria = new Xeometria();
-		assertEquals(6.0, xeometria.teoremaPitagoras(8.0, 10.0), 0);
-		assertEquals(-1, xeometria.teoremaPitagoras(-8.0, 10.0), 0);
-		assertEquals(-1, xeometria.teoremaPitagoras(8.0, -10.0), 0);
-		assertEquals(-1, xeometria.teoremaPitagoras(-8.0, -10.0), 0);
-		assertEquals(-1, xeometria.teoremaPitagoras(0.0, 10.0), 0);
-		assertEquals(-1, xeometria.teoremaPitagoras(8.0, 0.0), 0);
+		assertEquals(6.0, xeometria.teoremaPitagoras(10.0, 8.0), 0);
+		assertEquals(-1, xeometria.teoremaPitagoras(-10.0, 8.0), 0);
+		assertEquals(-1, xeometria.teoremaPitagoras(10.0, -8.0), 0);
+		assertEquals(-1, xeometria.teoremaPitagoras(-10.0, -8.0), 0);
+		assertEquals(-1, xeometria.teoremaPitagoras(10.0, 0.0), 0);
+		assertEquals(-1, xeometria.teoremaPitagoras(0.0, 8.0), 0);
 		assertEquals(-1, xeometria.teoremaPitagoras(0.0, 0.0), 0);
+		assertEquals(-1, xeometria.teoremaPitagoras(10.0, 20.0), 0);
 	}
 }
