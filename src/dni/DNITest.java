@@ -32,12 +32,16 @@ public class DNITest {
 		assertEquals(true, dni.eValido("12345678Z"));
 		assertEquals(false, dni.eValido("12345678Y"));
 		assertEquals(false, dni.eValido("1234567"));
+		assertEquals(false, dni.eValido("J"));
+		assertEquals(false, dni.eValido(""));
 	}
 	
 	@Test
 	public void calculaLetraUn() {
 		DNI dni = new DNI();
 		assertEquals(14, dni.calculaLetra("12345678"));
+		assertEquals(-1, dni.calculaLetra("1234567"));
+		assertEquals(-1, dni.calculaLetra("F"));
 	}
 	
 	@Test
@@ -66,5 +70,31 @@ public class DNITest {
 		dni.numeros.clear();
 		assertEquals(false, dni.eValido(dni.numeros,'G'));
 	}
+	
+	@Test
+	public void calculaLetraDous(){
+		DNI dni = new DNI();
+		dni.numeros.add(1);
+		dni.numeros.add(2);
+		dni.numeros.add(3);
+		dni.numeros.add(4);
+		dni.numeros.add(5);
+		dni.numeros.add(6);
+		dni.numeros.add(7);
+		dni.numeros.add(8);
+		assertEquals(14, dni.calculaLetra(dni.numeros));
+		dni.numeros.clear();
+		dni.numeros.add(1);
+		dni.numeros.add(2);
+		dni.numeros.add(3);
+		dni.numeros.add(4);
+		dni.numeros.add(5);
+		dni.numeros.add(6);
+		dni.numeros.add(7);
+		assertEquals(-1, dni.calculaLetra(dni.numeros));
+		dni.numeros.clear();
+		assertEquals(-1, dni.calculaLetra(dni.numeros));
+	}
+	
 
 }
