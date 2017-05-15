@@ -32,6 +32,9 @@ public class DNITest {
 		assertEquals(true, dni.eValido("12345678Z"));
 		assertEquals(false, dni.eValido("12345678Y"));
 		assertEquals(false, dni.eValido("1234567"));
+		assertEquals(false, dni.eValido("-12345678Z"));
+		assertEquals(false, dni.eValido("JJJJJJJJH"));
+		assertEquals(false, dni.eValido("JJJ8JJJJH"));
 		assertEquals(false, dni.eValido("J"));
 		assertEquals(false, dni.eValido(""));
 	}
@@ -40,8 +43,12 @@ public class DNITest {
 	public void calculaLetraUn() {
 		DNI dni = new DNI();
 		assertEquals(14, dni.calculaLetra("12345678"));
+		assertEquals(-1, dni.calculaLetra("-12345678"));
 		assertEquals(-1, dni.calculaLetra("1234567"));
+		assertEquals(-1, dni.calculaLetra("FFFFFFFF"));
+		assertEquals(-1, dni.calculaLetra("FFF1FFFF"));
 		assertEquals(-1, dni.calculaLetra("F"));
+		assertEquals(-1, dni.calculaLetra(""));
 	}
 	
 	@Test
