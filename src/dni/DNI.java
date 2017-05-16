@@ -3,9 +3,8 @@ package dni;
 import java.util.ArrayList;
 
 /**
- * 
- * @author dam115 Os métodos que devolvan o valor -1 estarán indicando que houbo
- *         un erro
+ * @author dam115 
+ * Os métodos que devolvan o valor -1 estarán indicando que houbo un erro
  */
 
 public class DNI {
@@ -55,6 +54,7 @@ public class DNI {
 		if (letra != comprobaLetra)
 			return false;
 		
+		//Devolve true se se pasan todas as comprobacións.
 		return true;
 	}
 
@@ -88,7 +88,7 @@ public class DNI {
 		// Calcúlase a letra correspondente ó número.
 		letra = num % 23;
 
-		// Devolve o número de letra.
+		// Devolve o número de letra se se pasan todas as comprobacións.
 		return letra;
 	}
 
@@ -125,21 +125,35 @@ public class DNI {
 		if (numeros.size() > 8 || numeros.size() < 8 || letra != letraDNI[numLetra])
 			return false;
 		
+		//Devolve true se se pasan todas as comprobacións.
 		return true;
 	}
 
+	/**
+	 * Método que calcula a letra do DNI a partir do número.
+	 * @param numeros ArrayList que contén os díxitos do número de DNI.
+	 * @return Devolve o número de letra correspondente ó número de DNI.
+	 */
 	public int calculaLetra(ArrayList<Integer> numeros) {
+		
+		//Compróbase que o número de DNI conteña oito díxitos.
 		if (numeros.size() > 8 || numeros.size() < 8)
 			return -1;
-
-		int i;
+		
+		//Declárase a variable numero.
 		String numero;
 		numero = "";
-		for (i = 0; i < numeros.size(); i++)
+		
+		//Concaténanse os díxitos do ArrayList e gárdanse en forma de String na variable numero.
+		for (int i = 0; i < numeros.size(); i++)
 			numero = numero + numeros.get(i);
 
+		//Declárase a variable letra.
 		int letra;
+		//Convértese o número de String a int e gárdase na variable letra.
 		letra = Integer.parseInt(numero) % 23;
+		
+		//Devolve o número de letra se se pasan todas as comprobacións.
 		return letra;
 	}
 }
