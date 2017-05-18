@@ -150,7 +150,8 @@ public class DNI {
 
 		//Declárase a variable letra.
 		int letra;
-		//Convértese o número de String a int e gárdase na variable letra.
+		/*Convértese o número de String a int, calcúlase o seu resto despois de dividilo entre 23 
+		e gárdase na variable letra.*/
 		letra = Integer.parseInt(numero) % 23;
 		
 		//Devolve o número de letra se se pasan todas as comprobacións.
