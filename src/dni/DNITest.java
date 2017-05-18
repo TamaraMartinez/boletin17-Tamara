@@ -107,7 +107,7 @@ public class DNITest {
 		assertEquals(false, dni.eValido(dni.numeros,'G'));
 		
 		//Elimínase un díxito do ArrayList.
-		dni.numeros.remove(8);
+		dni.numeros.remove(7);
 		
 		//O número non contén os 8 díxitos que debería.
 		assertEquals(false, dni.eValido(dni.numeros,'G'));
@@ -143,17 +143,8 @@ public class DNITest {
 		//Os valores do ArrayList son correctos e devólvese o número de letra 14.
 		assertEquals(14, dni.calculaLetra(dni.numeros));
 		
-		//Valéirase o ArrayList
-		dni.numeros.clear();
-		
-		//Introdúcense os valores no ArrayList.
-		dni.numeros.add(1);
-		dni.numeros.add(2);
-		dni.numeros.add(3);
-		dni.numeros.add(4);
-		dni.numeros.add(5);
-		dni.numeros.add(6);
-		dni.numeros.add(7);
+		//Elimínase un díxito do ArrayList.
+		dni.numeros.remove(7);
 		
 		//O número non contén os 8 díxitos que debería.
 		assertEquals(-1, dni.calculaLetra(dni.numeros));
