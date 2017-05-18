@@ -56,7 +56,7 @@ public class XeometriaTest {
 
 	/**
 	 * O terceiro argumento do assertEquals indica a precisión dos decimais. Neste
-	 * caso é cero para comprobar que o resultado da proba coindida co primeiro 
+	 * caso é cero para comprobar que o resultado da proba coincida co primeiro 
 	 * argumento de forma exacta.
 	 */
 	
